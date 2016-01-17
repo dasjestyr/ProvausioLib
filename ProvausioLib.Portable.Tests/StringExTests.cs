@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using FluentAssertions;
 using ProvausioLib.Portable.Extensions;
 using Xunit;
@@ -98,6 +99,33 @@ namespace ProvausioLib.Portable.Tests
 
             // assert
             succeeded.Should().BeFalse();
+        }
+
+        [Theory]
+        [InlineData("4.5", 4.5)]
+        [InlineData("261.3", 261.3)]
+        [InlineData("-8.8", -8.8)]
+        public void CastSucceedsWithDecimal(string stringValue, decimal decimalValue)
+        {
+            // arrange
+
+            // act
+            var value = stringValue.Cast<decimal>();
+
+            // assert
+            value.ShouldBeEquivalentTo(decimalValue);
+        }
+
+        [Fact]
+        public void CastThrowsWithInvalidValue()
+        {
+            // arrange
+            const string stringValue = "HelloWorld";
+
+            // act
+
+            // assert
+            var ex = Assert.Throws<FormatException>(() => stringValue.Cast<decimal>());
         }
     }
 }

@@ -24,6 +24,11 @@ namespace ProvausioLib.Portable.Extensions
             catch { parsedValue = default(T); return false; }
         }
 
+        public static T Cast<T>(this string str)
+        {
+            return (T) Convert.ChangeType(str, typeof (T), CultureInfo.InvariantCulture);
+        }
+
         /// <summary>
         /// Converts the string to snake_case
         /// </summary>
