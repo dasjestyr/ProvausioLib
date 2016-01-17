@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using FluentAssertions;
+using ProvausioLib.Portable.Extensions;
 using Xunit;
 
 namespace ProvausioLib.Portable.Tests
 {
+    [ExcludeFromCodeCoverage]
     public class DateTimeExTests
     {
         [Theory]

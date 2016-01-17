@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using FluentAssertions;
 using Xunit;
@@ -184,7 +183,7 @@ namespace ProvausioLib.Portable.Tests
 
             // assert
             result.StartDate.ShouldBeEquivalentTo(new DateTime(2016, 3, 7), "Start day should have been march 7");
-            result.EndDate.ShouldBeEquivalentTo(new DateTime(2016, 3, 13), "End day should have been march 13"));
+            result.EndDate.ShouldBeEquivalentTo(new DateTime(2016, 3, 13), "End day should have been march 13");
         }
     }
 }
