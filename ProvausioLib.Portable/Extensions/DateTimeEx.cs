@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProvausioLib.Portable
+namespace ProvausioLib.Portable.Extensions
 {
     public static class DateTimeEx
     {
