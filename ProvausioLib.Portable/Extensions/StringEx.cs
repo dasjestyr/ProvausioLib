@@ -24,6 +24,12 @@ namespace ProvausioLib.Portable.Extensions
             catch { parsedValue = default(T); return false; }
         }
 
+        /// <summary>
+        /// Casts the specified string. Throws if unsuccessful
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="str">The string.</param>
+        /// <returns></returns>
         public static T Cast<T>(this string str)
         {
             return (T) Convert.ChangeType(str, typeof (T), CultureInfo.InvariantCulture);
